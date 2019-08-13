@@ -181,6 +181,7 @@
              },
             "parameterValues": { 
               
+             
               
               
            }
@@ -190,7 +191,7 @@
       {
         "type": "Microsoft.Web/connections",
         "apiVersion": "2016-06-01",
-        "name": "[variables('connections_eventhubs_name')]",
+        "name": "[variables('connections_eventhubs_name')]", 
         "location":"[parameters('location')]",
         "dependsOn": [
           "[resourceId('Microsoft.EventHub/namespaces', variables('eventHubNamespaceName'))]",
