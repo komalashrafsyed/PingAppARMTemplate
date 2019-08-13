@@ -179,12 +179,7 @@
             "api": {
               "id": "[concat('/subscriptions/', variables('subscriptionId'), '/providers/Microsoft.Web/locations/', parameters('location'), '/managedApis/' , variables('connections_azureloganalyticsdatacollector_name'))]"
              },
-            "parameterValues": { 
-              
-             
-              
-              
-           }
+            "parameterValues": { }
 
         }
       },
