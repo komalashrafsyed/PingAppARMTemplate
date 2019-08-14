@@ -180,9 +180,6 @@
               "id": "[concat('/subscriptions/', variables('subscriptionId'), '/providers/Microsoft.Web/locations/', parameters('location'), '/managedApis/' , variables('connections_azureloganalyticsdatacollector_name'))]"
              },
             "parameterValues": { 
-              "workspaceId": {
-                "value":"[reference(resourceId('Microsoft.OperationalInsights/workspaces', variables('workspaceName')), '2015-11-01-preview').customerId]"
-              } 
             }
 
         }
