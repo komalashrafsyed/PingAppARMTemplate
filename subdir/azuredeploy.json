@@ -152,7 +152,7 @@
       {
         "type": "Microsoft.OperationalInsights/workspaces",
         "name": "[variables('workspaceName')]",
-        "apiVersion": "2015-11-01-preview",
+        "apiVersion": "2017-10-01",
         "location": "[parameters('location')]",
         "properties": {
          
@@ -180,6 +180,9 @@
               "id": "[concat('/subscriptions/', variables('subscriptionId'), '/providers/Microsoft.Web/locations/', parameters('location'), '/managedApis/' , variables('connections_azureloganalyticsdatacollector_name'))]"
              },
             "parameterValues": { 
+              "workspaceId": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', variables('workspaceName')), '2017-10-01').customerId]",
+              "workspaceKey": "[listKeys(resourceId('Microsoft.OperationalInsights/workspaces', variables('workspaceName')), '2017-10-01').primarySharedKey]"
+
             }
 
         }
