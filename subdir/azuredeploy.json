@@ -152,7 +152,7 @@
       {
         "type": "Microsoft.OperationalInsights/workspaces",
         "name": "[variables('workspaceName')]",
-        "apiVersion": "2015-11-01-preview",
+        "apiVersion": "2017-10-01",
         "location": "[parameters('location')]",
         "properties": {
          
@@ -214,6 +214,7 @@
         "name": "[variables('logicAppName')]",
         "location": "[parameters('location')]",
         "dependsOn": [
+
           "[resourceId('Microsoft.Web/connections', variables('connections_azureloganalyticsdatacollector_name'))]",
           "[resourceId('Microsoft.Web/connections', variables('connections_eventhubs_name'))]",
           "[concat('Microsoft.OperationalInsights/workspaces/', variables('workspaceName'))]",
