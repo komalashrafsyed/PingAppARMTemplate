@@ -379,11 +379,11 @@
             "enabledForDeployment": "[variables('enabledForDeployment')]",
             "enabledForDiskEncryption": "[variables('enabledForDiskEncryption')]",
             "enabledForTemplateDeployment": "[variables('enabledForTemplateDeployment')]",
-            "tenantId": "[variables('tenantId')]",
+            "tenantId": "[parameters('tenantId')]",
             "accessPolicies": [
                 {
                     "objectId": "[parameters('objectId')]",
-                    "tenantId": "[variables('tenantId')]",
+                    "tenantId": "[parameters('tenantId')]",
                     "permissions": {
                         "keys": "[variables('keysPermissions')]",
                         "secrets": "[variables('secretsPermissions')]"
