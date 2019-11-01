@@ -52,6 +52,70 @@
           "description": "Specifies the location in which to create the workspace."
         }
       },    
+      "keyVaultName": {
+        "type": "string",
+        "metadata": {
+            "description": "Specifies the name of the key vault."
+        }
+      },
+      "enabledForDeployment": {
+        "type": "bool",
+        "defaultValue": false,
+        "allowedValues": [
+            true,
+            false
+        ],
+        "metadata": {
+            "description": "Specifies whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault."
+        }
+      },
+    "enabledForDiskEncryption": {
+        "type": "bool",
+        "defaultValue": false,
+        "allowedValues": [
+            true,
+            false
+        ],
+        "metadata": {
+            "description": "Specifies whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys."
+        }
+      },
+    "enabledForTemplateDeployment": {
+        "type": "bool",
+        "defaultValue": false,
+        "allowedValues": [
+            true,
+            false
+        ],
+        "metadata": {
+            "description": "Specifies whether Azure Resource Manager is permitted to retrieve secrets from the key vault."
+        }
+        },
+    "objectId": {
+      "type": "string",
+      "metadata": {
+          "description": "Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets."
+       }
+      },
+      "keysPermissions": {
+        "type": "array",
+        "defaultValue": [
+          "Get","List","Update","Create","Import","Delete","Recover","Backup","Restore","Decrypt","Encrypt","UnwrapKey","WrapKey","Verify","Sign","Purge"
+        ],
+        "metadata": {
+            "description": "Specifies the permissions to keys in the vault. Valid values are: all, encrypt, decrypt, wrapKey, unwrapKey, sign, verify, get, list, create, update, import, delete, backup, restore, recover, and purge."
+        }
+    },
+    "secretsPermissions": {
+        "type": "array",
+        "defaultValue": [
+          "Get","List","Set","Delete","Backup","Restore","Recover"
+        ],
+        "metadata": {
+            "description": "Specifies the permissions to secrets in the vault. Valid values are: all, get, list, set, delete, backup, restore, recover, and purge."
+        }
+    },
+
       "repoUrl": {
         "type": "string"
       },
@@ -66,9 +130,12 @@
       "logicAppName": "[concat( toLower(parameters('projectName')), 'LogicApp',uniqueString(resourceGroup().id))]",
       "eventHubNameFinal": "[concat(variables('eventHubNamespaceName'), '/', parameters('projectName'))]",
       "subscriptionId":"[subscription().subscriptionId]",
+      "tenantId":"[subscription().tenantId]",
+      "objectId": "[reference(concat('Microsoft.Compute/virtualMachines/', variables('vmName')), '2017-03-30', 'Full').identity.principalId]",
       "resourceGroupName":"[resourceGroup().Name]",
       "someAppSetting": "Test app setting",
       "sku": "Free",
+      "skuName": "Standard",
       "workerSize":"0",
       "testUri": "http://azure.microsoft.com/en-us/status/feed/",
       "eventHubSku":"Standard",
@@ -308,6 +375,50 @@
                 }
             }
           }
+        }
+      },
+      {
+        "type": "Microsoft.KeyVault/vaults",
+        "name": "[parameters('keyVaultName')]",
+        "apiVersion": "2018-02-14",
+        "location": "[parameters('location')]",
+        "properties": {
+            "enabledForDeployment": "[parameters('enabledForDeployment')]",
+            "enabledForDiskEncryption": "[parameters('enabledForDiskEncryption')]",
+            "enabledForTemplateDeployment": "[parameters('enabledForTemplateDeployment')]",
+            "tenantId": "[parameters('tenantId')]",
+            "accessPolicies": [
+                {
+                    "objectId": "[parameters('objectId')]",
+                    "tenantId": "[variables('tenantId')]",
+                    "permissions": {
+                        "keys": "[parameters('keysPermissions')]",
+                        "secrets": "[parameters('secretsPermissions')]"
+                    }
+                }
+            ],
+            "sku": {
+                "name": "[variables('skuName')]",
+                "family": "A"
+            },
+            "networkAcls": {
+                "value": {
+                    "defaultAction": "Allow",
+                    "bypass": "AzureServices"
+                }
+            }
+        }
+    },
+    {
+        "type": "Microsoft.KeyVault/vaults/secrets",
+        "name": "[concat(parameters('keyVaultName'), '/', parameters('secretName'))]",
+        "apiVersion": "2018-02-14",
+        "location": "[parameters('location')]",
+        "dependsOn": [
+            "[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]"
+        ],
+        "properties": {
+            "value": "[parameters('secretValue')]"
         }
       },
       {
