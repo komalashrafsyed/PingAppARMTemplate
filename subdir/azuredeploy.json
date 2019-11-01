@@ -91,6 +91,12 @@
             "description": "Specifies whether Azure Resource Manager is permitted to retrieve secrets from the key vault."
         }
         },
+        "tenantId": {
+          "type": "string",
+          "metadata": {
+              "description": "Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets."
+           }
+          },
     "objectId": {
       "type": "string",
       "metadata": {
@@ -142,7 +148,6 @@
       "logicAppName": "[concat( toLower(parameters('projectName')), 'LogicApp',uniqueString(resourceGroup().id))]",
       "eventHubNameFinal": "[concat(variables('eventHubNamespaceName'), '/', parameters('projectName'))]",
       "subscriptionId":"[subscription().subscriptionId]",
-      "tenantId":"[subscription().tenantId]",
       "resourceGroupName":"[resourceGroup().Name]",
       "someAppSetting": "Test app setting",
       "sku": "Free",
@@ -410,7 +415,7 @@
             "accessPolicies": [
                 {
                     "objectId": "[parameters('objectId')]",
-                    "tenantId": "[variables('tenantId')]",
+                    "tenantId": "[parameters('tenantId')]",
                     "permissions": {
                         "keys": "[parameters('keysPermissions')]",
                         "secrets": "[parameters('secretsPermissions')]"
