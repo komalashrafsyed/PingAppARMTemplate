@@ -115,6 +115,18 @@
             "description": "Specifies the permissions to secrets in the vault. Valid values are: all, get, list, set, delete, backup, restore, recover, and purge."
         }
     },
+    "secretName": {
+      "type": "string",
+      "metadata": {
+          "description": "Specifies the name of the secret that you want to create."
+      }
+  },
+  "secretValue": {
+      "type": "securestring",
+      "metadata": {
+          "description": "Specifies the value of the secret that you want to create."
+      }
+  },
 
       "repoUrl": {
         "type": "string"
@@ -131,7 +143,6 @@
       "eventHubNameFinal": "[concat(variables('eventHubNamespaceName'), '/', parameters('projectName'))]",
       "subscriptionId":"[subscription().subscriptionId]",
       "tenantId":"[subscription().tenantId]",
-      "objectId": "[reference(concat('Microsoft.Compute/virtualMachines/', variables('vmName')), '2017-03-30', 'Full').identity.principalId]",
       "resourceGroupName":"[resourceGroup().Name]",
       "someAppSetting": "Test app setting",
       "sku": "Free",
