@@ -110,7 +110,7 @@
       "logicAppName": "[concat( toLower(parameters('projectName')), 'LogicApp',uniqueString(resourceGroup().id))]",
       "eventHubNameFinal": "[concat(variables('eventHubNamespaceName'), '/', parameters('projectName'))]",
       "subscriptionId":"[subscription().subscriptionId]",
-      "identityName": "[concat(parameters('username'), '-bootstrap')]",
+      "identityName": "[concat(parameters('username'), '@microsoft.com')]",
       "tenantId":"[subscription().tenantId]",
       "enabledForDeployment":true,
       "enabledForDiskEncryption":true,
