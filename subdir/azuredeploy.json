@@ -104,6 +104,8 @@
       "logicAppName": "[concat( toLower(parameters('projectName')), 'LogicApp',uniqueString(resourceGroup().id))]",
       "eventHubNameFinal": "[concat(variables('eventHubNamespaceName'), '/', parameters('projectName'))]",
       "subscriptionId":"[subscription().subscriptionId]",
+      "identity_resource_id": "[concat(resourceId('Microsoft.Web/sites', parameters('siteName')), '/providers/Microsoft.ManagedIdentity/Identities/default')]",
+      "objectId": "[reference(variables('identity_resource_id'), '2015-08-31-PREVIEW').principalId]",
       "tenantId":"[subscription().tenantId]",
       "enabledForDeployment":true,
       "enabledForDiskEncryption":true,
@@ -366,7 +368,8 @@
           "[resourceId('Microsoft.Web/connections', variables('connections_eventhubs_name'))]",
           "[concat('Microsoft.OperationalInsights/workspaces/', variables('workspaceName'))]",
           "[resourceId('Microsoft.EventHub/namespaces', variables('eventHubNamespaceName'))]",
-          "[resourceId('Microsoft.EventHub/Namespaces/EventHubs', variables('eventHubNamespaceName'), variables('eventHubName'))]"
+          "[resourceId('Microsoft.EventHub/Namespaces/EventHubs', variables('eventHubNamespaceName'), variables('eventHubName'))]",
+          "[concat(resourceId('Microsoft.Web/sites', parameters('siteName')), '/providers/Microsoft.ManagedIdentity/Identities/default')]"
 
         ],
         "properties": {
@@ -376,7 +379,7 @@
             "tenantId": "[variables('tenantId')]",
             "accessPolicies": [
                 {
-                   
+                    "objectId": "[parameters('objectId')]",
                     "tenantId": "[variables('tenantId')]",
                     "permissions": {
                         "keys": "[variables('keysPermissions')]",
