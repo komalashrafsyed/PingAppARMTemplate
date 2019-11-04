@@ -435,7 +435,7 @@
             "tenantId": "[variables('tenantId')]",
             "accessPolicies": [
                 {
-                    "objectId": "[reference(concat('Microsoft.Web/sites/', variables('app_name_backend')), '2016-08-01', 'Full').identity.principalId]",                   
+                    "objectId": "[reference(concat('Microsoft.Web/Sites/', parameters('siteName')), '2016-08-01', 'Full').identity.principalId]",                   
                     "tenantId": "[variables('tenantId')]",
                     "permissions": {
                         "keys": "[variables('keysPermissions')]",
