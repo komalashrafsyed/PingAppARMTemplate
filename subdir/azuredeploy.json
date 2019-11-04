@@ -105,7 +105,6 @@
       "eventHubNameFinal": "[concat(variables('eventHubNamespaceName'), '/', parameters('projectName'))]",
       "subscriptionId":"[subscription().subscriptionId]",
       "identity_resource_id": "[concat(resourceId('Microsoft.Web/sites', parameters('siteName')), '/providers/Microsoft.ManagedIdentity/Identities/default')]",
-      "objectId": "[reference(variables('identity_resource_id'), '2015-08-31-PREVIEW').principalId]",
       "tenantId":"[subscription().tenantId]",
       "enabledForDeployment":true,
       "enabledForDiskEncryption":true,
@@ -379,7 +378,7 @@
             "tenantId": "[variables('tenantId')]",
             "accessPolicies": [
                 {
-                    "objectId": "[parameters('objectId')]",
+                    "objectId": "[reference(variables('identity_resource_id'), '2015-08-31-PREVIEW').principalId]",
                     "tenantId": "[variables('tenantId')]",
                     "permissions": {
                         "keys": "[variables('keysPermissions')]",
