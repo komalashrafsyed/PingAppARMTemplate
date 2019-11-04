@@ -64,38 +64,32 @@
           "description": "Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets."
        }
       },
-      "username": {
-        "type": "string",
-        "metadata": {
-            "description": "Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets."
-         }
-        },
+     
      
     "secretName": {
       "type": "string",
       "metadata": {
           "description": "Specifies the name of the secret that you want to create."
       }
-  },
-  "secretValue": {
-      "type": "securestring",
+    },
+    "secretValue": {
+        "type": "securestring",
+        "metadata": {
+            "description": "Specifies the value of the secret that you want to create."
+        }
+    },
+    "secretNameTwo": {
+      "type": "string",
       "metadata": {
-          "description": "Specifies the value of the secret that you want to create."
+          "description": "Specifies the name of the secret that you want to create."
       }
-  },
-  "secretNameTwo": {
-    "type": "string",
-    "metadata": {
-        "description": "Specifies the name of the secret that you want to create."
-    }
-},
-"secretValueTwo": {
-    "type": "securestring",
-    "metadata": {
-        "description": "Specifies the value of the secret that you want to create."
-    }
-},
-
+    },
+    "secretValueTwo": {
+        "type": "securestring",
+        "metadata": {
+            "description": "Specifies the value of the secret that you want to create."
+        }
+    },
       "repoUrl": {
         "type": "string"
       },
@@ -435,7 +429,7 @@
             "tenantId": "[variables('tenantId')]",
             "accessPolicies": [
                 {
-                    "objectId": "[reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('identityName')), '2018-11-30').principalId]",                       
+                    "objectId": "[parameters('objectId')]",                       
                     "tenantId": "[variables('tenantId')]",
                     "permissions": {
                         "keys": "[variables('keysPermissions')]",
