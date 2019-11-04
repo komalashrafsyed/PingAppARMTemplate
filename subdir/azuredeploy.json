@@ -64,6 +64,12 @@
           "description": "Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets."
        }
       },
+      "username": {
+        "type": "string",
+        "metadata": {
+            "description": "Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets."
+         }
+        },
      
     "secretName": {
       "type": "string",
@@ -105,6 +111,7 @@
       "eventHubNameFinal": "[concat(variables('eventHubNamespaceName'), '/', parameters('projectName'))]",
       "subscriptionId":"[subscription().subscriptionId]",
       "identity_resource_id": "[concat(resourceId('Microsoft.Web/sites', parameters('siteName')), '/providers/Microsoft.ManagedIdentity/Identities/default')]",
+      "identityName": "[concat(parameters('username'), '-bootstrap')]",
       "tenantId":"[subscription().tenantId]",
       "enabledForDeployment":true,
       "enabledForDiskEncryption":true,
@@ -368,7 +375,7 @@
           "[concat('Microsoft.OperationalInsights/workspaces/', variables('workspaceName'))]",
           "[resourceId('Microsoft.EventHub/namespaces', variables('eventHubNamespaceName'))]",
           "[resourceId('Microsoft.EventHub/Namespaces/EventHubs', variables('eventHubNamespaceName'), variables('eventHubName'))]",
-          "[concat(resourceId('Microsoft.Web/sites', parameters('siteName')), '/providers/Microsoft.ManagedIdentity/Identities/default')]"
+          
 
         ],
         "properties": {
@@ -378,6 +385,7 @@
             "tenantId": "[variables('tenantId')]",
             "accessPolicies": [
                 {
+                    
                     "objectId": "[reference(variables('identity_resource_id'), '2015-08-31-PREVIEW').principalId]",
                     "tenantId": "[variables('tenantId')]",
                     "permissions": {
