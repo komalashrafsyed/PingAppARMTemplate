@@ -341,8 +341,8 @@
         "location": "[parameters('siteLocation')]",
         "properties": {
           "name": "[parameters('hostingPlanName')]",
-          "sku": "[parameters('sku')]",
-          "workerSize": "[parameters('workerSize')]",
+          "sku": "[variables('sku')]",
+          "workerSize": "[variables('workerSize')]",
           "numberOfWorkers": 1
         }
       },
