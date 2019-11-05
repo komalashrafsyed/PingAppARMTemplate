@@ -373,7 +373,7 @@
               "appSettings": [
                 {
                   "name": "someAppSetting",
-                  "value": "[parameters('someAppSetting')]"
+                  "value": "[variables('someAppSetting')]"
                 }
               ]
             }
