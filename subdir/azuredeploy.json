@@ -334,6 +334,18 @@
         }
       },
    
+      {
+        "apiVersion": "2014-06-01",
+        "name": "[parameters('hostingPlanName')]",
+        "type": "Microsoft.Web/serverFarms",
+        "location": "[parameters('siteLocation')]",
+        "properties": {
+          "name": "[parameters('hostingPlanName')]",
+          "sku": "[parameters('sku')]",
+          "workerSize": "[parameters('workerSize')]",
+          "numberOfWorkers": 1
+        }
+      },
       { 
         "apiVersion": "2014-06-01",
         "name": "[parameters('siteName')]",
@@ -361,7 +373,7 @@
               "appSettings": [
                 {
                   "name": "someAppSetting",
-                  "value": "[variables('someAppSetting')]"
+                  "value": "[parameters('someAppSetting')]"
                 }
               ]
             }
@@ -383,20 +395,8 @@
         ]
       },
       {
-        "apiVersion": "2014-06-01",
-        "name": "[parameters('hostingPlanName')]",
-        "type": "Microsoft.Web/serverFarms",
-        "location": "[parameters('siteLocation')]",
-        "properties": {
-          "name": "[parameters('hostingPlanName')]",
-          "sku": "[variables('sku')]",
-          "workerSize": "[variables('workerSize')]",
-          "numberOfWorkers": 1
-        }
-      },
-      {
         "type": "Microsoft.KeyVault/vaults",
-        "name": "kv-keyVault",
+        "name": "[parameters('keyVaultName')]",
         "apiVersion": "2018-02-14",
         "location":"[parameters('location')]",
         "dependsOn": [
