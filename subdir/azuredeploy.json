@@ -52,35 +52,21 @@
           "description": "Specifies the location in which to create the workspace."
         }
       },    
-     
+      "keyVaultName": {
+        "type": "string",
+        "metadata": {
+            "description": "Specifies the name of the key vault which must be between 3-24 alphanumeric characters. The name must begin with a letter, end with a letter or digit, and not contain consecutive hyphens"
+        }
+      },
+
     "objectId": {
       "type": "string",
       "metadata": {
           "description": "Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets."
        }
       },
-      "CreateKeyVault": {
-        "type": "string",
-        "metadata": {
-            "description": "Whether to create new key vault or reuse existing one"
-        },
-        "allowedValues": [
-            "Yes",
-            "No"
-        ]
-    },
-    "EventHubConnectionValue": {
-      "type": "string",
-      "metadata": {
-          "description": "Specifies the name of the secret that you want to create."
-      }
-    },
-    "BlobStoragePrimaryKeyValue": {
-      "type": "string",
-      "metadata": {
-          "description": "Specifies the name of the secret that you want to create."
-      }
-    },
+     
+   
       "repoUrl": {
         "type": "string"
       },
