@@ -90,7 +90,7 @@
       "keysPermissions":["Get","List","Update","Create","Import","Delete","Recover","Backup","Restore","Decrypt","Encrypt","UnwrapKey","WrapKey","Verify","Sign","Purge"],
       "secretsPermissions":["Get","List","Set","Delete","Backup","Restore","Recover"],
       "resourceGroupName":"[resourceGroup().Name]",
-      "someAppSetting": "Test app setting",
+      "someAppSetting": "Test app settings",
       "sku": "Free",
       "skuName": "standard",
       "workerSize":"0",
