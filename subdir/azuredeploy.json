@@ -92,7 +92,7 @@
       "resourceGroupName":"[resourceGroup().Name]",
       "someAppSetting": "Test app setting",
       "sku": "Free",
-      "skuName": "Standard",
+      "skuName": "standard",
       "workerSize":"0",
       "testUri": "http://azure.microsoft.com/en-us/status/feed/",
       "eventHubSku":"Standard",
