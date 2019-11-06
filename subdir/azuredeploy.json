@@ -77,7 +77,7 @@
     "variables": {
       "eventHubNamespaceName": "[concat(parameters('projectName'), 'ns')]",
       "eventHubName": "[parameters('projectName')]",
-      "storageacountname": "[concat(toLower(parameters('projectName')),'storageaccount')]",
+      "storageacountname": "[concat(toLower(parameters('projectName')),'sa')]",
       "containerName":"pingipfiles",
       "containerNameTwo":"pingipfilestest",
       "workspaceName": "[concat('LogAnalyticsns', uniqueString(resourceGroup().id))]",
