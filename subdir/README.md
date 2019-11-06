@@ -12,8 +12,7 @@ This repo contains the ARM Template for all the resources required for the PingC
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/2.png">
 <b>Step 4:</b> Wait for Deployment to go through when you see the form below; your resources are ready in Azure Portal </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/4.png">
-<b>Step 5:</b> Login to Azure portal to view the newly created resources </br>
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/5.png">
+
 <b>Step 6:</b> For now the Log Analytics connector is in (preview) mode therefore you will need to fill out the connection info manually. </br> Click on advanced settings for the log analytics workspace and copy the Workspace ID and Primary key 
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/5.5.png">
 Copy the Workspace ID and Primary key in a seperate file or notepad as you will need it for the next step
