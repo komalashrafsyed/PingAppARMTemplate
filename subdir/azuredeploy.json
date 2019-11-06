@@ -78,6 +78,7 @@
       "eventHubNamespaceName": "[concat(parameters('projectName'), 'ns')]",
       "eventHubName": "[parameters('projectName')]",
       "storageacountname": "[concat('sa', parameters('projectName'))]",
+      "containerName":"pingipfiles",
       "workspaceName": "[concat(toLower(parameters('projectName')),'LogAnalyticsns', uniqueString(resourceGroup().id))]",
       "logicAppName": "[concat( toLower(parameters('projectName')), 'LogicApp',uniqueString(resourceGroup().id))]",
       "eventHubNameFinal": "[concat(variables('eventHubNamespaceName'), '/', parameters('projectName'))]",
@@ -460,6 +461,30 @@
         "properties": {
             "value": "tempBlobStoragePrimaryKeyValue"
         }
+      },
+      {
+        "name": "[variables('storageacountname')]",
+        "type": "Microsoft.Storage/storageAccounts",
+        "apiVersion": "2018-02-01",
+        "location": "[parameters('location')]",
+        "kind": "StorageV2",
+        "sku": {
+          "name": "Standard_LRS",
+          "tier": "Standard"
+        },
+        "properties": {
+          "accessTier": "Hot"
+        },
+        "resources": [
+          {
+            "name": "[concat('default/', variables('containerName'))]",
+            "type": "blobServices/containers",
+            "apiVersion": "2018-03-01-preview",
+            "dependsOn": [
+              "[variables('storageacountname')]"
+            ]
+          }
+        ]
       }
       
      
