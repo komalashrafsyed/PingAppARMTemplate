@@ -1,5 +1,5 @@
 # Ping App ARM Template 
-This repo contains the ARM Template for all the resources required for the PingConsole or .NET Core App. It creates an Event Hub, Log Analytics Workspace, Logic App which pulls all the ping data from event hub into a log analytics workspace. This demo shows that you can use the Azure Deploy Button without a custom Azure Resource Manager template (azuredeploy.json).
+This repo contains the ARM Template for all the resources required for the PingConsole or .NET Core App. It creates an Event Hub, KeyVault, Storage Account, Log Analytics Workspace, Logic App which pulls all the ping data from event hub into a log analytics workspace. This demo shows that you can use the Azure Deploy Button without a custom Azure Resource Manager template (azuredeploy.json).
 
 # Deployment Steps
 <b>Step 1:</b> Click on the <b>'Deploy to Azure'</b> button below </br>
