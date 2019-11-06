@@ -424,7 +424,7 @@
                   "[resourceId('Microsoft.EventHub/namespaces', variables('eventHubNamespaceName'))]",
                   "[resourceId('Microsoft.EventHub/Namespaces/EventHubs', variables('eventHubNamespaceName'), variables('eventHubName'))]",
                   "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]",
-                  "[concat('Microsoft.Web/Sites/', variables('siteName'))]"
+                  "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
                   
                 ],
                 "properties": {
@@ -443,7 +443,7 @@
                   "[resourceId('Microsoft.EventHub/namespaces', variables('eventHubNamespaceName'))]",
                   "[resourceId('Microsoft.EventHub/Namespaces/EventHubs', variables('eventHubNamespaceName'), variables('eventHubName'))]",
                   "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]",
-                  "[concat('Microsoft.Web/Sites/', variables('siteName'))]"
+                  "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
                 ],
                 "properties": {
                     "publicAccess": "None"
@@ -464,7 +464,7 @@
           "[resourceId('Microsoft.EventHub/namespaces', variables('eventHubNamespaceName'))]",
           "[resourceId('Microsoft.EventHub/Namespaces/EventHubs', variables('eventHubNamespaceName'), variables('eventHubName'))]",
           "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]",
-          "[concat('Microsoft.Web/Sites/', variables('siteName'))]"
+          "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
         ],
         "properties": {
             "enabledForDeployment": "[variables('enabledForDeployment')]",
