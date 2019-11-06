@@ -77,7 +77,7 @@
     "variables": {
       "eventHubNamespaceName": "[concat(parameters('keyVaultName'), 'ns')]",
       "eventHubName": "[parameters('projectName')]",
-      "storageacountname": "[concat(toLower(parameters('siteName')),'sa')]",
+      "storageacountname": "[concat('storage', uniqueString(resourceGroup().id))]",
       "containerName":"pingipfiles",
       "containerNameTwo":"pingipfilestest",
       "workspaceName": "[concat('LogAnalyticsns', uniqueString(resourceGroup().id))]",
@@ -408,7 +408,7 @@
         "sku": {
             "name": "Standard_LRS"
         },
-        "kind": "StorageV2",
+        "kind": "Storage",
         "properties": {},
         "resources": [
             {
@@ -427,31 +427,12 @@
                   
                 ],
                 "properties": {
-                    "publicAccess": "Container"
-                }
-            },
-            {
-                "type": "blobServices/containers",
-                "apiVersion": "2018-03-01-preview",
-                "name": "[concat('default/', variables('containerNameTwo'))]",
-                "dependsOn": [
-                  "[variables('storageacountname')]",
-                  "[resourceId('Microsoft.Web/connections', variables('connections_azureloganalyticsdatacollector_name'))]",
-                  "[resourceId('Microsoft.Web/connections', variables('connections_eventhubs_name'))]",
-                  "[concat('Microsoft.OperationalInsights/workspaces/', variables('workspaceName'))]",
-                  "[resourceId('Microsoft.EventHub/namespaces', variables('eventHubNamespaceName'))]",
-                  "[resourceId('Microsoft.EventHub/Namespaces/EventHubs', variables('eventHubNamespaceName'), variables('eventHubName'))]",
-                  "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]",
-                  "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
-                ],
-                "properties": {
                     "publicAccess": "None"
                 }
             }
+            
         ]
     },
-
-
       {
         "type": "Microsoft.KeyVault/vaults",
         "name": "[parameters('keyVaultName')]",
@@ -474,6 +455,7 @@
             "tenantId": "[variables('tenantId')]",
             "accessPolicies": [
                 {
+                 
                     "objectId": "[parameters('objectId')]",                       
                     "tenantId": "[variables('tenantId')]",
                     "permissions": {
