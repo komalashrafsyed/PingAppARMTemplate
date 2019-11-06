@@ -75,9 +75,9 @@
       }
     },
     "variables": {
-      "eventHubNamespaceName": "[concat(parameters('projectName'), 'ns')]",
+      "eventHubNamespaceName": "[concat(parameters('keyVaultName'), 'ns')]",
       "eventHubName": "[parameters('projectName')]",
-      "storageacountname": "[concat(toLower(parameters('projectName')),'sa')]",
+      "storageacountname": "[concat(toLower(parameters('siteName')),'sa')]",
       "containerName":"pingipfiles",
       "containerNameTwo":"pingipfilestest",
       "workspaceName": "[concat('LogAnalyticsns', uniqueString(resourceGroup().id))]",
