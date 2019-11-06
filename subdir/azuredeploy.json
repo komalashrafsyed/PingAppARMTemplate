@@ -462,45 +462,7 @@
         "properties": {
             "value": "tempBlobStoragePrimaryKeyValue"
         }
-      },
-      {
-        "type": "Microsoft.Storage/storageAccounts",
-        "apiVersion": "2018-02-01",
-        "name": "[variables('storageacountname')]",
-        "location": "[parameters('location')]",
-        "tags": {
-            "displayName": "[variables('storageacountname')]"
-        },
-        "sku": {
-            "name": "Standard_LRS"
-        },
-        "kind": "StorageV2",
-        "properties": {},
-        "resources": [
-            {
-                "type": "blobServices/containers",
-                "apiVersion": "2018-03-01-preview",
-                "name": "[concat('default/', variables('containerName'))]",
-                "dependsOn": [
-                  "[variables('storageacountname')]"
-                ],
-                "properties": {
-                    "publicAccess": "Container"
-                }
-            },
-            {
-                "type": "blobServices/containers",
-                "apiVersion": "2018-03-01-preview",
-                "name": "[concat('default/', variables('containerNameTwo'))]",
-                "dependsOn": [
-                  "[variables('storageacountname')]"
-                ],
-                "properties": {
-                    "publicAccess": "None"
-                }
-            }
-        ]
-    }
+      }
       
      
 
