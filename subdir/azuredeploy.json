@@ -79,6 +79,7 @@
       "eventHubName": "[parameters('projectName')]",
       "storageacountname": "[concat('sa', parameters('projectName'))]",
       "containerName":"pingipfiles",
+      "containerNameTwo":"pingipfilestest",
       "workspaceName": "[concat(toLower(parameters('projectName')),'LogAnalyticsns', uniqueString(resourceGroup().id))]",
       "logicAppName": "[concat( toLower(parameters('projectName')), 'LogicApp',uniqueString(resourceGroup().id))]",
       "eventHubNameFinal": "[concat(variables('eventHubNamespaceName'), '/', parameters('projectName'))]",
@@ -463,29 +464,43 @@
         }
       },
       {
-        "name": "[variables('storageacountname')]",
         "type": "Microsoft.Storage/storageAccounts",
         "apiVersion": "2018-02-01",
+        "name": "[variables('storageacountname')]",
         "location": "[parameters('location')]",
-        "kind": "StorageV2",
+        "tags": {
+            "displayName": "[variables('storageacountname')]"
+        },
         "sku": {
-          "name": "Standard_LRS",
-          "tier": "Standard"
+            "name": "Standard_LRS"
         },
-        "properties": {
-          "accessTier": "Hot"
-        },
+        "kind": "StorageV2",
+        "properties": {},
         "resources": [
-          {
-            "name": "[concat('default/', variables('containerName'))]",
-            "type": "blobServices/containers",
-            "apiVersion": "2018-03-01-preview",
-            "dependsOn": [
-              "[variables('storageacountname')]"
-            ]
-          }
+            {
+                "type": "blobServices/containers",
+                "apiVersion": "2018-03-01-preview",
+                "name": "[concat('default/', variables('containerName'))]",
+                "dependsOn": [
+                  "[variables('storageacountname')]"
+                ],
+                "properties": {
+                    "publicAccess": "Container"
+                }
+            },
+            {
+                "type": "blobServices/containers",
+                "apiVersion": "2018-03-01-preview",
+                "name": "[concat('default/', variables('containerNameTwo'))]",
+                "dependsOn": [
+                  "[variables('storageacountname')]"
+                ],
+                "properties": {
+                    "publicAccess": "None"
+                }
+            }
         ]
-      }
+    }
       
      
 
