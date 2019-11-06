@@ -75,7 +75,7 @@
       }
     },
     "variables": {
-      "eventHubNamespaceName": "[concat(parameters('keyVaultName'), 'ns')]",
+      "eventHubNamespaceName": "[concat(parameters('projectName'), 'ns')]",
       "eventHubName": "[parameters('projectName')]",
       "storageacountname": "[concat('storage', uniqueString(resourceGroup().id))]",
       "siteName":"[concat('InstructionSite', uniqueString(resourceGroup().id))]",     
