@@ -49,8 +49,8 @@ When the form opens, paste the Blob Storage Primary Key in the value field as sh
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/15.png" >
 <b>Step 18:</b> Then repeat the same steps for replacing the Event Hub Connection string titled "eventhubconnString", click on the New Version button and paste the Event Hub Connection string saved from the previous step</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/16.png" >
-<b>Step 19:</b> The following Steps pertain to the installation of the PingAsync Utility on your System.
-You need to create a Linux VM or setup an existing Linux/Windows VM, on which your PingAsync utility Code will run. The following requires you to open an Azure CLI and run the following commands. The following is taken from a reference article here (https://docs.microsoft.com/en-us/azure/key-vault/tutorial-net-linux-virtual-machine) </br>
+<b>Step 19:</b> The following steps are related to the installation of the PingAsync Utility on your System.
+You need to create a Linux VM or setup an existing Linux/Windows VM, on which your PingAsync utility Code will run. It requires you to open an Azure CLI and run the following commands. The following is taken from a reference article here (https://docs.microsoft.com/en-us/azure/key-vault/tutorial-net-linux-virtual-machine) </br>
 <b>
 az vm create \
   --resource-group myResourceGroup \
