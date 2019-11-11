@@ -456,7 +456,7 @@
             "accessPolicies": [
                 {
                  
-                    "objectId": "[reference(concat('Microsoft.Web/sites/', parameters('siteName')), '2016-08-01', 'Full').properties.principalId]",                   
+                    "objectId": "[parameters('objectId')]",                   
                     "tenantId": "[variables('tenantId')]",
                     "permissions": {
                         "keys": "[variables('keysPermissions')]",

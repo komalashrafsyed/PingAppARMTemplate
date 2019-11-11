@@ -6,7 +6,7 @@ This repo contains the ARM Template for all the resources required for the PingC
 
 <a href="https://azuredeploy.net/" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 
-<b>Step 2:</b> Fill template form as shown below, fill the KeyVault Name with only letters between 3-24 with no numbers or special characters, ObjectId is a GUID string obtained from Azure CLI in portal, in PowerShell mode of Azure CLI type 'Get-AzADUser -UserPrincipalName foo@domain.com' repalcing foo@domain.com with your own Azure Portal email and pasting the Id string in the form below as shown, click <b>'Next' </b>button </br>
+<b>Step 2:</b> Fill template form as shown below, fill the KeyVault Name with only letters between 3-24 with no numbers or special characters, ObjectId is a GUID string obtained from Azure CLI in portal, in PowerShell mode of Azure CLI type 'Get-AzADUser -UserPrincipalName foo@domain.com' repalcing foo@domain.com with your own Azure Portal email and pasting the Object Id string in the form below as shown, click <b>'Next' </b>button </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/1%20new.png">
 <b>Azure CLI</b> How to obtain <b>'ObjectId'</b> field value from Azure CLI</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/0.5.png">
