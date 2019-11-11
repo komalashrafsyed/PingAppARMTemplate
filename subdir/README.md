@@ -23,12 +23,12 @@ Copy the Workspace ID and Primary key in a seperate file or notepad as you will 
 <b>Step 7:</b> Open up the API connection for Log Analytics workspace as shown below and paste the information copied in previous step </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/7new.png">
 <b>Step 8:</b> Click on Edit API connection 
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/6.5%20new.png">
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/6.5%20new.png" height="42" width="42">
 <b>Step 9:</b> Paste the Workspace ID and Primary key copied in the previous steps as shown below and click on <b>Save</b> button </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/7.5.png">
-<b>Step 10:</b> Next You need to replace the secrets in KeyVault with EventHubConnection string and also copy the name of the eventhub instance.</br>
+<b>Step 10:</b> Next You need to replace the secrets in KeyVault with EventHubConnection string and also copy the name of the eventhub instance. In addition make note of the event hub name instance as pointed below</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/8.png">
-<b>Step 11:</b>  Click on the EventHub and Copy it's connection string to a seperate file. Also make note of the event hub name instance as shown below </br>
+<b>Step 11:</b>  Click on the EventHub and copy it's Connection String to a seperate file, you will need this to be added as Key-Vault Secret value</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/8.5.png">
 Navigate to and Copy the event hub name as shown below</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/9.png">
@@ -36,14 +36,14 @@ Navigate to and Copy the event hub name as shown below</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/10.png">
 <b>Step 13:</b> Navigate to the Access Keys for the Storage account and copy the Key Value shown below onto a seperate file </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/11.png">
-<b>Step 14:</b> Then Navigate to the Containers tab in the same storage account and copy the name of the container onto a seperate file as shown below   </br>
+<b>Step 14:</b> Then Navigate to the Containers tab in the same storage account and copy the name of the container onto a seperate file as shown below. This will be need in appsettings json file of the ping utility code </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/12.png">
-<b>Step 15:</b> Lastly Click on the Key vault where all the information with regards to the secrets collected above will be pasted as shown below. First Copy the key vault's DNS name as show in the next step </br>
+<b>Step 15:</b> Lastly Click on the Key vault where all the information collected above will be stored in key vault in the form of secret's value as shown below. Make a note of the key vault's DNS name as shown below on to a seperate file. This will be need in settings file of the ping utility code </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/13.png">
-<b>Step 16:</b> Copy the key vault's DNS name as shown below </br>
+The key-vault's DNS name will be needed in appsettings json file of the ping utility code </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/14.png">
-<b>Step 17:</b>  </br>
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/14.png">
+<b>Step 16:</b>  </br>
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/14.5.png" >
 <b>Your system is ready to be used! </b>
 
  
