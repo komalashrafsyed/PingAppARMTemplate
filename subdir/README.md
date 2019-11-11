@@ -38,14 +38,18 @@ Navigate to and Copy the event hub name as shown below</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/11.png">
 <b>Step 14:</b> Then Navigate to the Containers tab in the same storage account and copy the name of the container onto a seperate file as shown below. This will be need in appsettings json file of the ping utility code </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/12.png">
-<b>Step 15:</b> Lastly Click on the Key vault where all the information collected above will be stored in key vault in the form of secret's value as shown below. Make a note of the key vault's DNS name as shown below on to a seperate file. This will be need in settings file of the ping utility code </br>
+<b>Step 15:</b> Click on the Key vault and Navigate it to it's Overview section to copy the DNS name for the keyvault. Make a note of the key vault's DNS name as shown below on to a seperate file. This will be needed in appsettings json file of the ping utility code and then to navigate to it's Secrets section to replace the values with the information copied in the above steps. Key vault will have all the information collected above to be stored in key vault in the form of secret's value as shown below.</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/13.png">
-The key-vault's DNS name will be needed in appsettings json file of the ping utility code </br>
+Save the key-vault's DNS name in a seperate file, it will be needed in appsettings json file of the ping utility code </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/14.png">
-<b>Step 16:</b>  </br>
+<b>Step 16:</b> Open the Key Vault tab called "Secrets" and click on the first secret value "blobStoragePrimaryKey" and click on "New Version" to store the new value copied in the previous steps.
+When the form opens, paste the Blob Storage Primary Key in the value field as shown below </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/14.5.png" >
+<b>Step 17:</b> When the Blob Storage Primary Key is pasted in the value field as shown below, click on the Create button</br>
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/15.png" >
+<b>Step 18:</b> Then repeat the same steps for replacing the Event Hub Connection string titled "eventhubconnString", click on the New Version button and paste the Event Hub Connection string saved from the previous step</br>
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/16.png" >
 <b>Your system is ready to be used! </b>
 
  
 
-Click on the Key vault and Navigate it to it's Overview section to copy the DNS name for the keyvault and then to navigate to it's Secrets section to replace the values with the information copied in the above steps
