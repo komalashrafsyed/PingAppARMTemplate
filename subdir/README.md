@@ -1,13 +1,15 @@
 # Ping App ARM Template 
-This repo contains the ARM Template for all the resources required for the PingConsole or .NET Core App. It creates an Event Hub, KeyVault, Storage Account, Log Analytics Workspace, Logic App which pulls all the ping data from event hub into a log analytics workspace. This demo shows that you can use the Azure Deploy Button without a custom Azure Resource Manager template (azuredeploy.json).
+This repo contains the ARM Template for all the resources required for the PingConsole or .NET Core App. It creates an Event Hub, KeyVault, Storage Account, Log Analytics Workspace, and Logic App which pulls all the ping data from event hub into a log analytics workspace. This demo shows that you can use the Azure Deploy Button without a custom Azure Resource Manager template (azuredeploy.json).
 
 # Deployment Steps
 <b>Step 1:</b> Click on the <b>'Deploy to Azure'</b> button below </br>
 
 <a href="https://azuredeploy.net/" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 
-<b>Step 2:</b> Fill template form as shown below, click <b>'Next' </b>button </br>
+<b>Step 2:</b> Fill template form as shown below, fill the KeyVault Name with only letters between 3-24 with no numbers or special characters, ObjectId is a GUID string obtained from Azure CLI in portal, in PowerShell mode of Azure CLI type 'Get-AzADUser -UserPrincipalName foo@domain.com' repalcing foo@domain.com with your own Azure Portal email and pasting the Id string in the form below as shown, click <b>'Next' </b>button </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/1%20new.png">
+<b>Azure CLI</b> How to obtain <b>'ObjectId'</b> field value from Azure CLI</br>
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/0.5.png">
 <b>Step 3:</b> Click <b>'Next' </b> after looking at validation passed </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/2%20new.png">
 <b>Step 4:</b> Wait for Deployment to go through when you see the form below; your resources are ready in Azure Portal </br>
@@ -22,7 +24,7 @@ Copy the Workspace ID and Primary key in a seperate file or notepad as you will 
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/7new.png">
 <b>Step 8:</b> Click on Edit API connection 
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/6.5%20new.png">
-<b>Step 9:</b> Fill out the Workspace ID and Primary key as shown below and click on <b>Save</b> button </br>
+<b>Step 9:</b> Paste the Workspace ID and Primary key copied in the previous steps as shown below and click on <b>Save</b> button </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/7.5.png">
 <b>Step 10:</b> Next You need to replace the secrets in KeyVault with EventHubConnection string and also copy the name of the eventhub instance.</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/8.png">
@@ -40,7 +42,7 @@ Navigate to and Copy the event hub name as shown below</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/13.png">
 <b>Step 16:</b> Copy the key vault's DNS name as shown below </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/14.png">
-<b>Step 16:</b>  </br>
+<b>Step 17:</b>  </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/14.png">
 <b>Your system is ready to be used! </b>
 
