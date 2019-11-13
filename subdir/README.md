@@ -23,7 +23,7 @@ Copy the Workspace ID and Primary key in a seperate file or notepad as you will 
 <b>Step 7:</b> Open up the API connection for Log Analytics workspace as shown below and paste the information copied in previous step </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/7new.png">
 <b>Step 8:</b> Click on Edit API connection 
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/6.5%20new.png"  height="660" width="750" >
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/6.5%20new.png"  height="460" width="550" >
 <b>Step 9:</b> Paste the Workspace ID and Primary key copied in the previous steps as shown below and click on <b>Save</b> button </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/7.5.png">
 <b>Step 10:</b> Next You need to replace the secrets in KeyVault with EventHubConnection string and also copy the name of the eventhub instance. In addition make note of the event hub name instance as pointed below</br>
