@@ -17,13 +17,13 @@ This repo contains the ARM Template for all the resources required for the PingC
 <b>Step 5:</b> Login to Azure portal to view the newly created resources </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/5new.png">
 <b>Step 6:</b> For now the Log Analytics connector is in (preview) mode therefore you will need to fill out the connection info manually. </br> Click on advanced settings for the log analytics workspace and copy the Workspace ID and Primary key 
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/5.5.png">
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/5.5.png"  height="90" width="90">
 Copy the Workspace ID and Primary key in a seperate file or notepad as you will need it for the next step
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/6%20new.png">
 <b>Step 7:</b> Open up the API connection for Log Analytics workspace as shown below and paste the information copied in previous step </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/7new.png">
 <b>Step 8:</b> Click on Edit API connection 
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/6.5%20new.png" height="20" width="29">
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/6.5%20new.png" >
 <b>Step 9:</b> Paste the Workspace ID and Primary key copied in the previous steps as shown below and click on <b>Save</b> button </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/7.5.png">
 <b>Step 10:</b> Next You need to replace the secrets in KeyVault with EventHubConnection string and also copy the name of the eventhub instance. In addition make note of the event hub name instance as pointed below</br>
@@ -69,7 +69,7 @@ az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourRe
 az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssignedIdentity> --secret-permissions get list
 </b>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/19.5.png" >
-<b>Step 22:</b> Now that you have the VM setup along with the necessary resources to run the Azure PingUtility let's download the PingAsync Utility application bu running the following commands inside your VM by ssh ipaddress@azureuser command from Powershell as shown below:</br>
+<b>Step 22:</b> Now that you have the VM setup along with the necessary resources to run the Azure PingUtility let's download the PingAsync Utility application bu running the following commands inside your VM by ssh azureuser@<PublicIpAddress> command from Powershell as shown below:</br>
 <b>
 az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssignedIdentity> --secret-permissions get list
 </b>
