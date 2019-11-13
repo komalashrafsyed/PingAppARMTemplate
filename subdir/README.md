@@ -71,14 +71,16 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/19.5.png" >
 <b>Step 22:</b> Now that you have the VM setup along with the necessary resources to run the Azure PingUtility let's download the PingAsync Utility application by running the following commands inside your VM by ssh azureuser@<PublicIpAddress> command from Powershell as shown below:</br>
 <b>
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+ssh azureuser@<PublicIpAddress></br>
 
-$ wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
-$ sudo dpkg -i packages-microsoft-prod.deb
-$ sudo apt-get install apt-transport-https
-$ sudo apt-get update
-$ sudo apt-get install dotnet-sdk-2.1
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg</br>
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg</br>
+
+$ wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb</br>
+$ sudo dpkg -i packages-microsoft-prod.deb</br>
+$ sudo apt-get install apt-transport-https</br>
+$ sudo apt-get update</br>
+$ sudo apt-get install dotnet-sdk-2.1</br>
 </b>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/19.5.png"
 
