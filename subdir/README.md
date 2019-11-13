@@ -84,7 +84,7 @@ $ sudo apt-get install dotnet-sdk-2.1</br>
 </b>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/20.5.png" >
 
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/20.png" >
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/21.png" >
 
 <b>Your system is ready to be used! </b>
 
