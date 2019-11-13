@@ -69,9 +69,12 @@ az vm identity assign --name NameOfYourVirtualMachine --resource-group YourResou
 az keyvault set-policy --name 'YourKeyVaultName' --object-id VMSystemAssignedIdentity --secret-permissions get list
 </b>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/19.5.png" >
-<b>Step 22:</b> Now that you have the VM setup along with the necessary resources to run the Azure PingUtility let's download the PingAsync Utility application by running the following commands inside your VM by ssh azureuser@PublicIpAddress command from Windows Powershell as shown below:</br>
+<b>Step 22:</b> Now that you have the VM setup along with the necessary resources to run the Azure PingUtility let's download the PingAsync Utility application by running the following commands inside your VM by running <b> ssh azureuser@PublicIpAddress </b> command from Windows Powershell as shown below:</br>
+Run the  <b>az login </b> command and select subscription to access the VM
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/20.5.png" >
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/21.png" >
 <b>
-ssh azureuser@PublicIpAddress</br>
+ssh azureuser@PublicIPAddress</br>
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg</br>
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg</br>
@@ -82,9 +85,9 @@ $ sudo apt-get install apt-transport-https</br>
 $ sudo apt-get update</br>
 $ sudo apt-get install dotnet-sdk-2.1</br>
 </b>
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/20.5.png" >
 
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/21.png" >
+
+
 
 <b>Your system is ready to be used! </b>
 
