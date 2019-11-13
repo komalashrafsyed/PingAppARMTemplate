@@ -69,7 +69,7 @@ az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourRe
 az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssignedIdentity> --secret-permissions get list
 </b>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/19.5.png" >
-<b>Step 22:</b> Now that you have the VM setup along with the necessary resources to run the Azure PingUtility let's download the PingAsync Utility application bu running the following commands inside your VM by ssh azureuser@<PublicIpAddress> command from Powershell as shown below:</br>
+<b>Step 22:</b> Now that you have the VM setup along with the necessary resources to run the Azure PingUtility let's download the PingAsync Utility application by running the following commands inside your VM by ssh azureuser@<PublicIpAddress> command from Powershell as shown below:</br>
 <b>
 az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssignedIdentity> --secret-permissions get list
 </b>
