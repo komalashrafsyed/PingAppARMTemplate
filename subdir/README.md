@@ -56,7 +56,7 @@ az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --ad
 </b>
 Once the Linux VM is setup the next steps will show you how to link the VM to the keyVault. In case you are using an existing VM, skip to the next step
 </br>
-<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/6.5%20new.png" >
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/16.5.png" >
 When the above runs, a new VM will be created in the resource group specified, copy the details of the newly created VM in a seperate file</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/18.png" >
 <b>Step 20:</b> Next Assign an identity to the VM as shown below by running the following command, save the details in a seperate file to be used in the next step</br>
