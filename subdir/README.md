@@ -76,6 +76,7 @@ To access the VM you might need to reset the password for the azureuser login na
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/21.png" >
 <b>
 <b>Step 22:</b> Install the following on the VM created above by running the following commands </br>
+<b>
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg</br>
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg</br>
 
@@ -87,6 +88,7 @@ $ sudo apt-get install dotnet-sdk-2.1</br>
 </b>
 
 <b>Step 23:</b> Install the Ping Async Tool by logging in to the VM through ssh and running the following commands </br>
+<b>
 $ wget -qO - https://raw.githubusercontent.com/komalsyed-Azure377/pingasynctool/master/PUBLIC.KEY | sudo apt-key add -</br>
 $ echo "deb https://raw.githubusercontent.com/komalsyed-Azure377/pingasynctool/master bionic main" | sudo tee /etc/apt/sources.list.d/pingtool.list</br>
 $ sudo apt-get update</br>
