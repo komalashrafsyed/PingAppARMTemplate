@@ -74,7 +74,7 @@ Run the  <b>az login </b> command and select subscription to access the VM
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/20.5.png" >
 To access the VM you might need to reset the password for the azureuser login name from the Azure poral, if it is a new VM created through the process in the previous steps. Then run the <b>ssh azureuser@PublicIPAddress</b> command as shown below </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/21.png" >
-<b>
+
 <b>Step 22:</b> Install the following on the VM created above by running the following commands </br>
 <b>
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg</br>
