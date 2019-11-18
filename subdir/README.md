@@ -53,7 +53,7 @@ When the form opens, paste the Blob Storage Primary Key in the value field as sh
 You need to create a Linux VM or setup an existing Linux/Windows VM, on which your PingAsync utility Code will run. It requires you to open an Azure CLI PowerShell and run the following commands. The following is taken from a reference article here (https://docs.microsoft.com/en-us/azure/key-vault/tutorial-net-linux-virtual-machine) </br>
 <b>
 az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys
-</b>
+</b></br>
 Once the Linux VM is setup the next steps will show you how to link the VM to the keyVault. In case you are using an existing VM, skip to the next step
 </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/16.5.png" >
@@ -75,6 +75,7 @@ Run the  <b>az login </b> command and select subscription to access the VM
 To access the VM you might need to reset the password for the azureuser login name from the Azure poral, if it is a new VM created through the process in the previous steps. Then run the <b>ssh azureuser@PublicIPAddress</b> command as shown below </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/21.png" >
 <b>
+<b>Step 22:</b> Install the following on the VM created above by running the following commands </br>
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg</br>
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg</br>
 
@@ -83,6 +84,15 @@ $ sudo dpkg -i packages-microsoft-prod.deb</br>
 $ sudo apt-get install apt-transport-https</br>
 $ sudo apt-get update</br>
 $ sudo apt-get install dotnet-sdk-2.1</br>
+</b>
+
+<b>Step 23:</b> Install the Ping Async Tool by logging in to the VM through ssh and running the following commands </br>
+$ wget -qO - https://raw.githubusercontent.com/komalsyed-Azure377/pingasynctool/master/PUBLIC.KEY | sudo apt-key add -</br>
+$ echo "deb https://raw.githubusercontent.com/komalsyed-Azure377/pingasynctool/master bionic main" | sudo tee /etc/apt/sources.list.d/pingtool.list</br>
+$ sudo apt-get update</br>
+$ sudo apt-get install pingasync</br>
+$ export PING_HOME=/opt/ksyed/pingtool/PingAsync.dll</br>
+$ sudo dotnet $PING_HOME</br>
 </b>
 
 
