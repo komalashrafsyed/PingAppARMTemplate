@@ -119,7 +119,7 @@ The configuration has 5 elements which need to be changed according to resources
 3. The third element is the name of your file, which you have uploaded to blob storage or even if it is on your local VM, the filename should be complete with extension i.e filename.csv or filename.xlsx.</br>
 4. The fourth element required is the <b>Storage Account Name</b> saved in a seperate file in Step 12 above.</br>
 5. The fifth element required is the <b> Storage Container Name</b> saved in a seperate file in Step 14 above.</br>
-6. Line 6 just explains that depending on the file extension this SELECTED_FILE_TYPE should have an integer value set to 1 or 2,if it is an excel file or csv file respectively.</br>
+6. Line 6 just explains that depending on the file extension this SELECTED_FILE_TYPE should have an integer value set to 1 or 2, if it is an excel file or csv file respectively.</br>
 7. line 7 explains the purpose of the SELECTED_IP_COLUMN which is a string in the format _IP_COLUMNX where X is the column for the ip address value in the uploaded file - you can skip this explanation if your IP address is the first column for a csv file, if it is excel file then this should be set to _IP_COLUMN1 for e.g.</br>
 8. line 8 again just explains that if the file has been uploaded to blob to set the FILE_LOCATION BLOB value to true, otherwise set it to true for a file placed in LOCAL_FILE_PATH on the VM.</br>
 
