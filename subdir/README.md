@@ -107,11 +107,9 @@ $ sudo apt-get update</br>
 $ sudo apt-get install pingasync</br>
 $ export PING_HOME=/opt/ksyed/pingtool/PingAsync.dll</br>
 $ sudo dotnet $PING_HOME</br>
-</br></br>
-
 </b>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/26.png" >
-</br>
+
 <b>Your system has the Ping Utilty running successfully! </b></br>
 
 <b>Step 25:</b> Changing the PingUtilty is shown below. In order to change the configuration for the Ping Utility being run navigate to the <b>appsettings.json</b> file by writing the command '<b>cd /opt/ksyed/pingtool</b>' in the same session above and then type the command  <b>sudo vim appsettings.json</b> will open the configuration for you to change the input csv file containing the ping ip address values</br></br>
