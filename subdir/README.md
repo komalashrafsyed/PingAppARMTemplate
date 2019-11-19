@@ -86,8 +86,13 @@ $ wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-
 $ sudo dpkg -i packages-microsoft-prod.deb</br>
 $ sudo apt-get install apt-transport-https</br>
 $ sudo apt-get update</br>
-$ sudo apt-get install dotnet-sdk-2.1</br>
+$ sudo apt-get install dotnet-sdk-3.0</br>
+$ dotnet --version</br>
 </b>
+You results of running the above would like the following
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/23.png" >
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/23.5.png" >
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/24.png" >
 
 <b>Step 23:</b> Install the Ping Async Tool by logging in to the VM through ssh and running the following commands </br>
 <b>
