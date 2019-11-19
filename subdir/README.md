@@ -59,20 +59,20 @@ Once the Linux VM is setup the next steps will show you how to link the VM to th
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/16.5.png" >
 When the above runs, a new VM will be created in the resource group specified, copy the details of the newly created VM in a seperate file</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/18.png" >
-<b>Step 20:</b> Next Assign an identity to the VM as shown below by running the following command, save the details in a seperate file to be used in the next step</br>
+<b>Step 20:</b>In this next step assign an identity to the VM as shown below by running the following command, after the above has successfully run in the Azure CLI, run the following in the same Azure CLI, when the following has successfully run, save the details in a seperate file to be used in the next step</br>
 <b>
 az vm identity assign --name NameOfYourVirtualMachine --resource-group YourResourceGroupName
 </b>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/19.png" >
-<b>Step 21:</b> In the last step give your Key Vault permission to the Virtual Machine identity you created in the previous step by running the following command as shown below, replace the KeyVault name and the object Id with values obtained from the previous steps</br>
+<b>Step 21:</b> In this last step related to key-vault and VM pairing, give your Key Vault permission to the Virtual Machine identity you created in the previous step by running the following command as shown below in same Azure CLI window, replace the KeyVault name and the object Id with values obtained from the previous steps</br>
 <b>
 az keyvault set-policy --name 'YourKeyVaultName' --object-id VMSystemAssignedIdentity --secret-permissions get list
 </b>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/19.5.png" >
-<b>Step 22:</b> Now that you have the VM setup along with the necessary resources to run the Azure PingUtility let's download the PingAsync Utility application by running the following commands inside your VM by running <b> ssh azureuser@PublicIpAddress </b> command from Windows Powershell as shown below:</br>
-Run the  <b>az login </b> command and select subscription to access the VM
+<b>Step 22:</b> Now that you have the VM setup in Azure along with the necessary resources to run PingUtility on an Azure based VM, let's download the PingAsync Utility application through the following steps. Open a <b> Windows Powershell</b> in Administrator mode as shown below, then run the following command inside your VM by running command in Windows Powershell: </br><b> ssh azureuser@PublicIpAddress </b> </br>
+The following shows how to access your Azure subscriptions in a Windown Powershell command prompt, run the <b>az login </b> command and select subscription to access the VM:
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/20.5.png" >
-To access the VM you might need to reset the password for the azureuser login name from the Azure poral, if it is a new VM created through the process in the previous steps. Then run the <b>ssh azureuser@PublicIPAddress</b> command as shown below </br>
+To access the VM, if it is a new VM created through the process in the previous steps, you might need to reset the password for the azureuser login name from the Azure poral. TO login in to the VM run the <b>ssh azureuser@PublicIPAddress</b> command as shown below </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/21.png" >
 
 <b>Step 22:</b> Install the following on the VM created above by running the following commands </br>
