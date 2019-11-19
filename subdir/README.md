@@ -116,7 +116,7 @@ $ sudo dotnet $PING_HOME</br>
 The configuration has 5 elements which need to be changed according to resources in your enviornment and VM setup.</br>
 1. The first element required is the <b>Key-Vault DNS name</b> saved in a seperate file in Step 15 above</br>
 2. The second element required is the <b>EventHub Name</b> saved in a seperate file in Step 11 above</br>
-3. The third element is the name of your file, which you have uploaded to blob storage or even if it is on your local VM, the filename should be complete with extension i.e filename.csv or filename.xlsx.</br>
+3. The third element is the name of your file, which you have uploaded to blob storage or even if it is on your local VM, the <b>filename</b> should be complete with extension i.e filename.csv or filename.xlsx.</br>
 4. The fourth element required is the <b>Storage Account Name</b> saved in a seperate file in Step 12 above.</br>
 5. The fifth element required is the <b> Storage Container Name</b> saved in a seperate file in Step 14 above.</br>
 6. Line 6 just explains that depending on the file extension this SELECTED_FILE_TYPE should have an integer value set to 1 or 2, if it is an excel file or csv file respectively.</br>
