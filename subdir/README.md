@@ -103,11 +103,9 @@ $ sudo apt-get install pingasync</br>
 $ export PING_HOME=/opt/ksyed/pingtool/PingAsync.dll</br>
 $ sudo dotnet $PING_HOME</br>
 </b>
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/26.png" >
+</br>
+<b>Your system has the Ping Utilty running successfully! </b></br>
 
-
-
-
-<b>Your system is ready to be used! </b>
-
- 
+In order to change the configuration of the running Ping Utility navigate to the <b>appsettings.json</b> file </b></br>
 
