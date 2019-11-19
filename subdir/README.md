@@ -56,7 +56,7 @@ You need to create a Linux VM or setup an existing Linux/Windows VM, on which yo
 <b>
 az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys
 </b></br>
-Once the Linux VM is setup the next steps will show you how to link the VM to the key-vault. In case you are using an existing VM, skip to the next step</br>
+Once the Linux VM is setup the next steps will show you how to link the VM to the key-vault. In case you are using an existing VM, skip to the next step
 </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/16.5.png" >
 When the above runs, a new VM will be created in the resource group specified, copy the details of the newly created VM in a seperate file</br>
