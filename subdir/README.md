@@ -80,7 +80,7 @@ To access the VM, if it is a new VM created through the process in the previous 
 Once you have reset the password, run the <b>ssh azureuser@PublicIPAddress</b> command as shown below to login in to your VM </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/21.png" >
 
-<b>Step 23:</b> The following walks you through the steps to prep the Azure based VM that was accessed above so the the PingUtilty can be run on the VM. Install the following components on the VM by running the following commands in the same Windows Powershell session that you used to ssh or login to VM as shown below:</br>
+<b>Step 23:</b> The following walks you through the steps to prep the Azure based VM that was accessed above so the the PingUtilty can be run on the VM. Install the following components on the VM by running the following commands in the same Windows Powershell session that you used to ssh or login to VM as shown below:
 <b></br>
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg</br>
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg</br>
@@ -93,7 +93,7 @@ $ sudo apt-get install dotnet-sdk-3.0</br>
 $ dotnet --version</br>
 </b>
 Your results of running the above should look like the following
-</br></br>
+</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/23.png" >
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/23.5.png" >
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/24.png" >
