@@ -107,5 +107,7 @@ $ sudo dotnet $PING_HOME</br>
 </br>
 <b>Your system has the Ping Utilty running successfully! </b></br>
 
-In order to change the configuration of the running Ping Utility navigate to the <b>appsettings.json</b> file </b></br>
+<b>Step 24:</b> Changing the PingUtilty is shown below. In order to change the configuration for the Ping Utility being run navigate to the <b>appsettings.json</b> file by writing the command '<b>cd /opt/ksyed/pingtool</b>' in the same session above and then type the command  <b>sudo vim appsettings.json</b> will open the configuration for you to change the input csv file containing the ping ip address values</br>
+<img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/27.png" >
+</br>
 
