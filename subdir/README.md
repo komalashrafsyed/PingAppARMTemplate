@@ -72,7 +72,7 @@ az keyvault set-policy --name 'YourKeyVaultName' --object-id VMSystemAssignedIde
 <b>Step 22:</b> Now that you have the VM setup in Azure along with the necessary resources to run PingUtility on an Azure based VM, let's download the PingAsync Utility application through the following steps. Open a <b> Windows Powershell</b> in Administrator mode as shown below, then run the following command inside your VM by running command in Windows Powershell: </br><b> ssh azureuser@PublicIpAddress </b> </br>
 The following shows how to access your Azure subscriptions in a Windown Powershell command prompt, run the <b>az login </b> command and select subscription to access the VM:
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/20.5.png" >
-To access the VM, if it is a new VM created through the process in the previous steps, you might need to reset the password for the azureuser login name from the Azure poral. TO login in to the VM run the <b>ssh azureuser@PublicIPAddress</b> command as shown below </br>
+To access the VM, if it is a new VM created through the process in the previous steps, you might need to reset the password for the azureuser login name from the Azure poral. To login in to the VM run the <b>ssh azureuser@PublicIPAddress</b> command as shown below </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/21.png" >
 
 <b>Step 22:</b> Install the following on the VM created above by running the following commands </br>
