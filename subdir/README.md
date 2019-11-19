@@ -37,7 +37,6 @@ Navigate to and Copy the event hub name as shown below</br>
 <b>Step 13:</b> Navigate to the Access Keys for the Storage account and copy the Key Value shown below onto a seperate file </br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/11.png">
 <b>Step 14:</b> Then Navigate to the Containers tab in the same storage account and copy the name of the container onto a seperate file as shown below. This will be need in appsettings json file of the ping utility code </br>
-
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/12.png">
 <b>Step 15:</b> Click on the Key vault and Navigate it to it's Overview section to copy the DNS name for the keyvault. Make a note of the key vault's DNS name as shown below on to a seperate file. This will be needed in appsettings json file of the ping utility code and then to navigate to it's Secrets section to replace the values with the information copied in the above steps. Key vault will have all the information collected above to be stored in key vault in the form of secret's value as shown below.</br>
 
