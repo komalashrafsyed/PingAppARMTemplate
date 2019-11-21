@@ -52,7 +52,7 @@ When the form opens, paste the Blob Storage Primary Key in the value field as sh
 <b>Step 18:</b> Then repeat the same steps for replacing the Event Hub Connection string titled "eventhubconnString", click on the New Version button and paste the Event Hub Connection string saved from the previous step</br>
 <img src="https://komalsandboxdiag.blob.core.windows.net/pingarmtemplatereadmefiles/16.png" >
 <b>Step 19:</b> The following steps are related to the installation of the PingAsync Utility on your System.
-You need to create a Linux VM or prep an existing Linux/Windows VM according to Step 20, on which your PingAsync utility Code will run. It requires you to open an Azure CLI PowerShell and run the following commands. The following is taken from a reference article here (https://docs.microsoft.com/en-us/azure/key-vault/tutorial-net-linux-virtual-machine) </br>
+You need to create a Linux VM or prep an existing Linux/Windows VM according to Step 20, on which your PingAsync utility Code will run. It requires you to open an Azure CLI PowerShell and run the following commands. The following is taken from a reference article <a href="https://docs.microsoft.com/en-us/azure/key-vault/tutorial-net-linux-virtual-machine">here</a> here (https://docs.microsoft.com/en-us/azure/key-vault/tutorial-net-linux-virtual-machine) </br>
 <b>
 az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys
 </b></br>
@@ -139,6 +139,10 @@ $ sudo dotnet $PING_HOME</br>
 <b>Your system has the Ping Utilty running successfully!</b></br>
 
 
+<b>References</b>
+
+On information how to package your code as an apt package (using this <a href="https://medium.com/bluekiri/packaging-a-net-core-service-for-ubuntu-4f8e9202d1e5">link</a>- ), 
+This Walkthrough will list down the steps in creating an apt package from your .NET Core 3.0 application code (download the latest .NET Core soure code for the Ping App from <a href="https://github.com/komalsyed-Azure377/PingAsyncUtilityCode">here</a>)
 
 
 
