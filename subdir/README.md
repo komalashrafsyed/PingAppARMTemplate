@@ -142,7 +142,7 @@ $ sudo dotnet $PING_HOME</br>
 </br>
 </br>
 
-<b>References</b>
+<b>References/Implementation Notes</b></br>
 On information how to package your code as an apt package (using this <a href="https://medium.com/bluekiri/packaging-a-net-core-service-for-ubuntu-4f8e9202d1e5">link</a>)</br> 
 This Walkthrough will list down the steps in creating an apt package from your .NET Core 3.0 application code (download the latest .NET Core soure code for the Ping App from <a href="https://github.com/komalsyed-Azure377/PingAsyncUtilityCode">here</a>)
 
